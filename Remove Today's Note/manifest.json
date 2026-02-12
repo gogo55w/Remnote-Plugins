@@ -1,0 +1,22 @@
+{
+  "manifestVersion": 1,
+  "id": "gogo55w-remove-todays-note",
+  "name": "Remove Today's Note Button",
+  "author": "gogo55w",
+  "repoUrl": "",
+  "version": {
+    "major": 0,
+    "minor": 0,
+    "patch": 1
+  },
+  "theme": [],
+  "enableOnMobile": true,
+  "description": "For users who prefer not to use this feature.",
+  "requestNative": false,
+  "requiredScopes": [
+    {
+      "type": "All",
+      "level": "Read"
+    }
+  ]
+}

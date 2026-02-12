@@ -1,0 +1,24 @@
+/* Add your custom styles here. See the docs for help: https://plugins.remnote.com/custom-css */
+/* Remove "Today's Note" from the sidebar  */
+[data-label="Today's Note"] {
+	display: none;
+}
+[data-label="今日笔记"] {
+	display: none;
+} 
+[data-label="Heutige Notiz"] {
+	display: none;
+} 
+[data-label="Nota de hoy"] {
+	display: none;
+} 
+[data-label="Note du jour"] {
+	display: none;
+} 
+[data-label="Dzisiejsza notatka"] {
+	display: none;
+} 
+/* Remove "Today's Note" in Tab Plugin  */
+[data-plugin-id="demo-tabs"]>div>div:first-child {
+	display: none;
+}
