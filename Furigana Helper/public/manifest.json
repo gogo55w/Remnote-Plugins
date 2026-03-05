@@ -1,0 +1,22 @@
+{
+  "manifestVersion": 1,
+  "id": "gogo55w-furigana-helper",
+  "name": "Furigana Helper",
+  "author": "gogo55w",
+  "repoUrl": "https://github.com/gogo55w/Remnote-Plugins",
+  "version": {
+    "major": 0,
+    "minor": 0,
+    "patch": 1
+  },
+  "theme": [],
+  "enableOnMobile": false,
+  "description": "Easily add Furigana reading aids to your RemNote notes and make cards",
+  "requestNative": false,
+  "requiredScopes": [
+    {
+      "type": "All",
+      "level": "ReadCreateModify"
+    }
+  ]
+}
