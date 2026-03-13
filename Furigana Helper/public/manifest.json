@@ -11,7 +11,7 @@
   },
   "theme": [],
   "enableOnMobile": false,
-  "description": "Easily add Furigana reading aids to your RemNote notes and make cards",
+  "description": "Easily add Furigana reading aids to your RemNote notes",
   "requestNative": false,
   "requiredScopes": [
     {
