@@ -1,11 +1,10 @@
 ## 🌸 RemNote Furigana Helper
 
-![demo](./public/logo2.png)
+![demo](https://raw.githubusercontent.com/gogo55w/Remnote-Plugins/main/Furigana%20Helper/public/logo2.png)
 An intelligent Japanese Furigana injector for RemNote, designed for beauty, performance, and readability.
 
 ### ✨ Features
 
-- 🚀 **Local Dictionary** — Powered by kuromoji, runs entirely offline with no external API calls.
 - 🎨 **Dual Rendering Modes** — Choose between floating LaTeX typesetting or inline bracket notation.
 - 🔗 **Smart Compound Merging** — Automatically merges adjacent kanji into a single furigana block.
 - ⚙️ **Fully Customizable** — Separate settings for selection mode and full-Rem mode.
@@ -24,22 +23,22 @@ An intelligent Japanese Furigana injector for RemNote, designed for beauty, perf
 
 Highlight any phrase with your mouse, then press `Alt + Shift + F`.
 Supports both **bracket** and **LaTeX** modes.
-![demo3](./public/3.gif)
+![demo3](https://raw.githubusercontent.com/gogo55w/Remnote-Plugins/main/Furigana%20Helper/public/3.gif)
 Merge Compound Words
-![demo4](./public/4.gif)
+![demo4](https://raw.githubusercontent.com/gogo55w/Remnote-Plugins/main/Furigana%20Helper/public/4.gif)
 
 ### 2. Annotate an Entire Rem
 
 Place your cursor on a Rem without selecting any text, then press `Alt + Shift + F`.
 Supports both **bracket** and **LaTeX** modes.
-![demo1](./public/1.gif)
-![demo2](./public/2.gif)
-![demo6](./public/6.gif)
+![demo1](https://raw.githubusercontent.com/gogo55w/Remnote-Plugins/main/Furigana%20Helper/public/1.gif)
+![demo2](https://raw.githubusercontent.com/gogo55w/Remnote-Plugins/main/Furigana%20Helper/public/2.gif)
+![demo6](https://raw.githubusercontent.com/gogo55w/Remnote-Plugins/main/Furigana%20Helper/public/6.gif)
 
 ### 3. Batch Annotate Multiple Rems
 
 Select multiple Rems and press `Alt + Shift + F` to annotate them all at once.
-![demo5](./public/5.gif)
+![demo5](https://raw.githubusercontent.com/gogo55w/Remnote-Plugins/main/Furigana%20Helper/public/5.gif)
 
 ---
 
@@ -58,3 +57,4 @@ Select multiple Rems and press `Alt + Shift + F` to annotate them all at once.
 ## 📝 Todo
 
 - [ ] Preserve rich text formatting (bold, italic) within annotated selections
+- [ ] Upgrade to LINEヤフーが提供するテキスト解析WebAPI

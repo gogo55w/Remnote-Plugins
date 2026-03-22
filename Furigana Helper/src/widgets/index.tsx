@@ -7,22 +7,35 @@ import KuromojiAnalyzer from 'kuroshiro-analyzer-kuromoji';
 const kuroshiro = new Kuroshiro();
 let initializationPromise: Promise<void> | null = null;
 
-async function initAnalyzer() {
+async function initAnalyzer(plugin: ReactRNPlugin) {
   // concurrency safe
   if (initializationPromise) return initializationPromise;
 
   initializationPromise = (async () => {
     try {
+      const originalOpen = XMLHttpRequest.prototype.open;
+      (XMLHttpRequest.prototype as any).open = function (
+        method: string,
+        url: string,
+        ...rest: any[]
+      ) {
+        if (typeof url === 'string' && url.includes('.dat')) {
+          plugin.app.toast('XHR intercept: ' + url);
+          const filename = url.split('/').pop();
+          url = 'https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict/' + filename;
+        }
+        return originalOpen.apply(this, [method, url, ...rest] as any);
+      };
       const analyzer = new KuromojiAnalyzer({
-        dictPath: '/dict',
+        dictPath: 'https://cdn.jsdelivr.net/npm/kuromoji@0.1.2/dict/',
       });
 
       await kuroshiro.init(analyzer);
 
-      console.log('Furigana Helper: Dictionary loaded ✅');
+      await plugin.app.toast('Furigana Helper: Dictionary loaded ✅');
     } catch (e) {
       initializationPromise = null;
-      console.error('Furigana Helper: Failed to load dictionary ❌', e);
+      await plugin.app.toast('Furigana Helper: Failed to load dictionary ❌');
       throw e;
     }
   })();
@@ -32,7 +45,7 @@ async function initAnalyzer() {
 
 async function getFuriganaLatex(plugin: ReactRNPlugin, text: string): Promise<string> {
   // Ensure the kuroshiro analyzer is initialized before conversion
-  await initAnalyzer();
+  await initAnalyzer(plugin);
   const useTiny = await plugin.settings.getSetting('furigana size');
   const sizeCmd = useTiny ? '\\tiny ' : '';
 
@@ -52,7 +65,7 @@ async function getFuriganaLatex(plugin: ReactRNPlugin, text: string): Promise<st
 }
 
 async function getFuriganaBrackets(plugin: ReactRNPlugin, text: string): Promise<string> {
-  await initAnalyzer();
+  await initAnalyzer(plugin);
   const shouldMerge = (await plugin.settings.getSetting('merge compounds')) ?? true;
 
   const userBrackets: string[] = [];
